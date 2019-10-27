@@ -1,0 +1,53 @@
+#Server Cofiguration
+server:
+  port: 9090
+  #Context path configuration
+  servlet:
+    context-path: /SBFormApp
+#MVC view Resolver Configuration  
+spring:
+  mvc:
+    view:
+      prefix: /views/
+      suffix: .jsp
+#Profile related Config
+  profiles:
+    active: qa        
+#Config for connected Admin server    
+  boot:
+    admin:
+      client:
+        url: http://localhost:7070
+        
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"        
+#custom messages for registration related in default profile
+form-app: 
+  messages: 
+    succMsg: User Registration SucessFully-default
+    failMsg: User Registration Failed Please Fill Correct Info-default
+    updateMsg: User Update  SuccessFully...!!
+    restSaveMSg : User  data saved with id==>         
+    deleteMsg : User Data Deleted Successfully with id==> 
+#Oauth2.0 configuration github  
+security:
+  oauth2:
+    client:
+      client-id: 548c6e056a74285624dd
+      client-secret: a906b4ea7b8661327b0693ee103076862459e4a5
+      access-token-uri: https://github.com/login/oauth/access_token
+      user-authorization-uri: https://github.com/login/oauth/authorize
+      client-authentication-scheme: form
+    resource: 
+      user-info-uri: https://api.github.com/user
+      prefer-token-info: false
+             
+info: 
+  application-name: SpringBootUserCrudApp
+  status: Up and Running
+   
+      
+    
