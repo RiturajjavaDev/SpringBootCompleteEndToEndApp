@@ -53,6 +53,7 @@ public class UserController {
 		User userObj = new User();
 		model.addAttribute(AppConstants.USER_MOD_OBj, userObj);
 		loadFormData(model);
+		int i=10
 		return AppConstants.LOGIC_VIEW_NAME_REG;
 	}
 	/**
