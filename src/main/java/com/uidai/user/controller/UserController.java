@@ -95,7 +95,11 @@ public class UserController {
 	@RequestMapping("/deleteUser")
 	public String deleteUser(@RequestParam("userId") Integer userId) {
 		service.deleteUserByid(userId,1);
+		int i=10;
+		int j=20;
+		int k=i+j;
 		return AppConstants.REDIRECT_USER_LIST;
+		
 	}
 	/**
 	 * Here we use this delete method to perform 
